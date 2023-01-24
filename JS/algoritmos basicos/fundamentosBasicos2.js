@@ -120,20 +120,50 @@ console.log(agregaSiete([1,2,3]));
 // Array Inverso - Dado un array, escribe una función que invierte sus valores en el lugar. Ejemplo: invertir([3,1,6,4,2)) devuelve el mismo array pero con sus valores al revés, es decir [2,4,6,1,3]. Haz esto sin crear un array temporal vacío. (Pista: necesitarás intercambiar (swap) valores).
 
 function invertir(array){
-    var conteoInv = array.length-1;
-    for (let i = 0; i < array.length; i++) {
-        var valorIda = array[i];
-        var valorVuelta = array[conteoInv];
-        array[i] = valorVuelta;
-        array[conteoInv] = valorIda;
-        console.log (array)
-        conteoInv--
-    }
-    return array
+    array.reverse();
+    return array;
 }
 console.log(invertir([3,1,6,4,2]));
 
 // Perspectiva: Negativa - Dado un array crear y devuelve uno nuevo que contenga todos los valores del array original, pero negativos (no simplemente multiplicando por -1). Dado [1,-3,5], devuelve [-1,-3,-5].
+
+function valorNegativo(array){
+    for (let i = 0; i < array.length; i++) {
+        if (0 < array[i]) {
+            array[i]*= -1
+        }
+    }
+    return array;
+}
+console.log (valorNegativo([1,-3,5]));
 // Siempre hambriento - Crea una función que acepte un array e imprima (print) “yummy” cada vez que alguno de los valores sea “comida”. Si ningún valor es “comida”, entonces imprime “tengo hambre” una vez. 
+
+function siempreHambriento(array){
+    var food = false;
+    for (let i = 0; i < array.length; i++) {
+        if ("comida" == array[i]) {
+            console.log("yummy")
+            food = true;
+        }
+    }
+    if (food == false){
+        console.log("tengo hambre")
+    }
+}
+
+siempreHambriento([1,2,3,4,"comida",6,7,8,9,10,"comida"]);
+
 // Cambiar hacia el centro -  Dado un array, cambia el primer y último valor, el tercero con el ante penútimo, etc. Ejemplo: cambiaHaciaElCentro([true, 42, “Ada”, 2, “pizza”]) cambia el array a [“pizza¨, 42, “Ada”, 2, true]. cambiaHaciaElCentro([1,2,3,4,5,6]) cambia el array a [6,2,4,3,5,1]. No es necesario devolver (return) el array esta vez. 
+
+// No entendí este ejercicio.
+
+
 // Escala el Array - Dado un array arr y un número num, multiplica todos los valores en el array arr por el número num, y devuelve el array arr modificado. Por ejemplo, escalaArray([1,2,3], 3] debería devolver [3,6,9].
+
+function propDistributiva(arr, num){
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] *= num;
+    }
+    return arr;
+}
+console.log(propDistributiva([1,2,3], 3));
