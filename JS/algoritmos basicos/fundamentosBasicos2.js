@@ -152,10 +152,24 @@ function siempreHambriento(array){
 }
 
 siempreHambriento([1,2,3,4,"comida",6,7,8,9,10,"comida"]);
+siempreHambriento([1,2,3,4,5])
 
 // Cambiar hacia el centro -  Dado un array, cambia el primer y último valor, el tercero con el ante penútimo, etc. Ejemplo: cambiaHaciaElCentro([true, 42, “Ada”, 2, “pizza”]) cambia el array a [“pizza¨, 42, “Ada”, 2, true]. cambiaHaciaElCentro([1,2,3,4,5,6]) cambia el array a [6,2,4,3,5,1]. No es necesario devolver (return) el array esta vez. 
 
-// No entendí este ejercicio.
+function cambiarAlCentro(array) {
+    for (let i = 0; i < array.length/2; i++) {
+        if (i%2 == 0){
+            let almacenar = array[i];
+            array[i] = array[array.length-1-i];
+            array[array.length-1-i] = almacenar;
+        }
+    }
+    return array;
+}
+
+console.log(cambiarAlCentro(["pizza", 42, "Ada", 2, true]));
+console.log(cambiarAlCentro([1,2,3,4,5,6]));
+
 
 
 // Escala el Array - Dado un array arr y un número num, multiplica todos los valores en el array arr por el número num, y devuelve el array arr modificado. Por ejemplo, escalaArray([1,2,3], 3] debería devolver [3,6,9].
