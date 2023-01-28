@@ -3,16 +3,16 @@
 //Devuelve la suma de 1 a N. Por ejemplo,  Sum1toN(3) devolverá la suma de 1+2+3, la cual es 6
 //sum1toN(255) devuelve la suma de todos los números de 1 a 255
 function Sum1toN(n){
-    var sigma = 0;
-    for (let i = 0; i <= n; i++) {
-        sigma+= i;
-    }
-    return sigma
+    // var sigma = 0;
+    // for (let i = 0; i <= n; i++) {
+    //     sigma+= i;
+    // }
+    // return sigma
 }
 //devuelve la suma del primer y último número en el array
 function sumFirstLast(arr){
-    var sumaPrimeroFinal = arr[0] + arr[arr.length-1];
-    return sumaPrimeroFinal;
+    // var sumaPrimeroFinal = arr[0] + arr[arr.length-1];
+    // return sumaPrimeroFinal;
 }
 
 describe("Sum1toN", function() { 
@@ -68,17 +68,4 @@ describe("sumMaxMin", function(){
     it ("debería devolver -12 cuando le entregamos [-2,-5,-10] como argumento", function(){
         expect(sumMaxMin([-2,-5,-10])).toEqual(-12);
     })
-});
-
-
-describe("Sum1toN", function() { 
-    it("should return 3 when we pass 2 as an argument", function() { 
-        expect(Sum1toN(2)).toEqual(3); 
-    }); 
-    it("should return 6 when we pass 3 as an argument", function() { 
-        expect(Sum1toN(3)).toEqual(6); 
-    }); 
-    it("should return 10 when we pass 4 as an argument", function() { 
-        expect(Sum1toN(4)).toEqual(10); 
-    }); 
 });
